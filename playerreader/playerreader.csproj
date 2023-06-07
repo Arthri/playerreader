@@ -1,53 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Build Configuration -->
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
-    <ProjectGuid>{2503A16B-4439-4CE1-A52C-274B2C5C528A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>playerreader</RootNamespace>
-    <AssemblyName>playerreader</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+
+
+
+  <!-- Package Information -->
+  <PropertyGroup>
+    <Version>1.0.0.0</Version>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
+
+
+
+  <!-- Dependencies -->
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="OTAPI">
-      <HintPath>References\OTAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="TerrariaServer">
-      <HintPath>References\TerrariaServer.exe</HintPath>
-    </Reference>
-    <Reference Include="TShockAPI">
-      <HintPath>References\TShockAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="HttpServer">
-      <HintPath>References\HttpServer.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>References\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data" />
+    <PackageReference Include="MODEFDP.OTAPI.Upcoming" Version="3.1.20.1" />
+    <PackageReference Include="MODEFDP.TSAPI" Version="5.2.0" />
+    <PackageReference Include="MODEFDP.TShock" Version="5.2.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.31" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
 </Project>
