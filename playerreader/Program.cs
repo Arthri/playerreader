@@ -46,7 +46,7 @@ namespace PlayerReader
             TShock.RestApi.Register(new SecureRestCommand("/readplayers", PlayerRead, RestPermissions.restuserinfo));
         }
 
-        private object PlayerFind(IParameterCollection parameters)
+        private object PlayerFind(EscapedParameterCollection parameters)
         {
             string name = parameters["player"];
             if (string.IsNullOrWhiteSpace(name))
